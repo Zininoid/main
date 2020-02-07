@@ -1,17 +1,19 @@
 package com.zininoid.hibernate;
 
 import com.zininoid.hibernate.entities.Developer;
+import com.zininoid.hibernate.entities.Project;
 import org.hibernate.HibernateException;
 import org.hibernate.Transaction;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class DeveloperMap
 {
 	public static void testDeveloperMap()
 	{
-/*
-		HashMap<String, Project> projectsJava = new HashMap<String, Project>();
+
+/*		HashMap<String, Project> projectsJava = new HashMap<String, Project>();
 		projectsJava.put("Java Core", new Project("Mining", "Bitcoin corp"));
 		projectsJava.put("Java Front", new Project("CoolSite", "CoolSite.com"));
 

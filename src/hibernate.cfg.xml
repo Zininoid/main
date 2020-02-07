@@ -1,29 +1,35 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-		"-//Hibernate/Hibernate Configuration DTD//EN"
-		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-	<session-factory>
+    <session-factory>
+
+        <property name="connection.url">jdbc:mysql://gidropedia.ru:3306/gidroped_rm</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">login</property>
+        <property name="connection.password">passsowrd</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!--
+                <property name="hbm2ddl.auto">create</property>
+        -->
+        <mapping resource="entities/Books.hbm.xml"/>
+        <mapping resource="entities/Authors.hbm.xml"/>
+        <mapping resource="entities/Employee.hbm.xml"/>
+        <mapping resource="entities/Phones.hbm.xml"/>
+
+        <mapping resource="entities/Developer.hbm.xml"/>
+        <mapping resource="entities/Project.hbm.xml"/>
 
 
-
-		<mapping resource="com/zininoid/hibernate/resources/entities/Books.hbm.xml"/>
-		<mapping resource="com/zininoid/hibernate/resources/entities/Authors.hbm.xml"/>
-		<mapping resource="com/zininoid/hibernate/resources/entities/Employee.hbm.xml"/>
-		<mapping resource="com/zininoid/hibernate/resources/entities/Phones.hbm.xml"/>
-
-		<mapping resource="com/zininoid/hibernate/resources/entities/Developer.hbm.xml"/>
-		<mapping resource="com/zininoid/hibernate/resources/entities/Project.hbm.xml"/>
-		<!--
-
-		<property name="hbm2ddl.auto">create</property>
-
-			<mapping resource="com/zininoid/hibernate/resources/entities/Advert.hbm.xml"/>
-				<mapping resource="com/zininoid/hibernate/resources/entities/Category.hbm.xml"/>
-				<mapping resource="com/zininoid/hibernate/resources/entities/Phone.hbm.xml"/>
-				<mapping resource="com/zininoid/hibernate/resources/entities/User.hbm.xml"/>
-		-->
-	</session-factory>
+        <!--
+                <mapping resource="com/zininoid/hibernate/entities/Advert.hbm.xml"/>
+                <mapping resource="com/zininoid/hibernate/resources/entities/Category.hbm.xml"/>
+                <mapping resource="com/zininoid/hibernate/resources/entities/Phone.hbm.xml"/>
+                <mapping resource="com/zininoid/hibernate/resources/entities/User.hbm.xml"/>
+        -->
+    </session-factory>
 
 
 </hibernate-configuration>
