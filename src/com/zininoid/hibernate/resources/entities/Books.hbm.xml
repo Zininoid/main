@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping
+		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zininoid.hibernate.entities.Books" table="books">
+
+		<id name="id" type="long" column="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="authorId" column="authot_id" type="long" not-null="true"/>
+		<property name="bookName" column="book_name" type="string" not-null="true"/>
+		<property name="price" column="price" type="float" not-null="true"/>
+	</class>
+
+	<class name="com.zininoid.hibernate.entities.BookCat" table="books">
+		<id name="id" type="long" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="style" column="style" type="string" not-null="false"/>
+		<property name="bookName" column="book_name" type="string" not-null="true"/>
+		<property name="price" column="price" type="float" not-null="true"/>
+	</class>
+
+	<query name="com.zininoid.hibernate.entities.BookCat.getBooksByCategory">
+		select bookCat
+		from com.zininoid.hibernate.entities.BookCat bookCat
+		where bookCat.style =:category
+	</query>
+
+
+</hibernate-mapping>

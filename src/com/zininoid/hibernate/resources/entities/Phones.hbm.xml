@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping
+		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zininoid.hibernate.entities.Phones" table="Phones">
+
+		<id name="id" type="long" column="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="employeeId" column="EMPLOYEE_ID" type="long"/>
+		<property name="country" column="COUNTRY" type="string"/>
+		<property name="operator" column="OPERATOR" type="string"/>
+		<property name="phoneNumber" column="PHONE_NUMBER" type="string"/>
+	</class>
+
+</hibernate-mapping>

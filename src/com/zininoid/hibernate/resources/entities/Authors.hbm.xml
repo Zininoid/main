@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping
+		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zininoid.hibernate.entities.Author" table="authors">
+
+		<id name="id" type="long" column="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="authorName" column="author_name" type="string"/>
+		<property name="dateOfBirth" column="DATE_OF_BIRTH" type="java.util.Calendar"/>
+
+		<set name="books" table="Books" cascade="all">
+			<key column="author_id"/>
+			<one-to-many class="com.zininoid.hibernate.entities.Books" />
+		</set>
+	</class>
+
+	<query name="com.zininoid.hibernate.entities.Author.getAuthorByName">
+		select author
+		from com.zininoid.hibernate.entities.Author author
+		where author.authorName = :authorName
+	</query>
+</hibernate-mapping>

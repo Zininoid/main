@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping
+		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zininoid.hibernate.entities.Employee" table="EMPLOYEE">
+
+		<id name="id" type="long" column="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="firstName" column="FIRST_NAME" type="string"/>
+		<property name="lastName" column="LAST_NAME" type="string"/>
+		<property name="salary" column="SALARY" type="int"/>
+
+		<component name = "address" class="com.zininoid.hibernate.entities.Address">
+			<property name = "street" column = "STREET_NAME" type = "string"/>
+			<property name = "city" column = "CITY_NAME" type = "string"/>
+			<property name = "state" column = "STATE_NAME" type = "string"/>
+			<property name = "zipcode" column = "ZIPCODE" type = "string"/>
+		</component>
+
+		<list name="phones" table="PHONES" cascade="all">
+			<key column="EMPLOYEE_ID"/>
+			<list-index  column="ID"/>
+			<one-to-many class="com.zininoid.hibernate.entities.Phones"/>
+		</list>
+
+	</class>
+
+</hibernate-mapping>
+

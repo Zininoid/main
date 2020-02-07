@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping
+		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zininoid.hibernate.entities.Developer" table="DEVELOPER">
+
+		<id name="id" type="long" column="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="firstName" column="FIRST_NAME" type="string"/>
+		<property name="lastName" column="LAST_NAME" type="string"/>
+		<property name="speciality" column="SPECIALTY" type="string"/>
+		<property name="expirience" column="EXPERIENCE" type="int"/>
+
+		<map name="projectMap" cascade="all">
+			<key column = "DEVELOPER_ID"/>
+			<index column="SPHERE" type = "string"/>
+			<one-to-many class = "com.zininoid.hibernate.entities.Project"/>
+		</map>
+
+	</class>
+
+</hibernate-mapping>
