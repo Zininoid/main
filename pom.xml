@@ -13,13 +13,11 @@
     </properties>
 
     <dependencies>
-        <!--driver for connection to ORACLE database -->
+        <!--driver for connection to MySql database -->
         <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc</artifactId>
-            <version>14</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/ojdbc7.jar</systemPath>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.34</version>
         </dependency>
 
         <dependency>
