@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping
+		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zininoid.hibernate.entities.HibernateProject" table="HIBERNATE_PROJECTS">
+
+		<id name="id" type="int" column="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="projectName" column="PROJECT_NAME" type="string"/>
+		<property name="companyName" column="COMPANY" type="string"/>
+	</class>
+
+</hibernate-mapping>

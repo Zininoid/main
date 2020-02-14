@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping
+		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zininoid.hibernate.entities.Agent" table="AGENT">
+
+		<id name="id" type="int" column="id">
+			<generator class="native"/>
+		</id>
+
+		<property name = "firstName" column = "first_name" type = "string"/>
+		<property name = "lastName" column = "last_name" type = "string"/>
+		<property name = "salary" column = "salary" type = "int"/>
+
+		<many-to-one name = "address" column = "address"
+		             class="com.zininoid.hibernate.entities.AgentAddress" not-null="true"/>
+
+	</class>
+
+</hibernate-mapping>

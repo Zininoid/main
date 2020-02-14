@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping
+		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zininoid.hibernate.entities.AgentAddress" table="AGENT_ADDRESS">
+
+		<id name = "id" type = "int" column = "id">
+			<generator class="native"/>
+		</id>
+
+		<property name = "street" column = "street_name" type = "string"/>
+		<property name = "city" column = "city_name" type = "string"/>
+		<property name = "state" column = "state_name" type = "string"/>
+		<property name = "zipcode" column = "zipcode" type = "string"/>
+
+	</class>
+
+</hibernate-mapping>

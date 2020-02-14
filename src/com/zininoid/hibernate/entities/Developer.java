@@ -10,6 +10,7 @@ public class Developer
 	private String speciality;
 	private int expirience;
 	private Map<String, Project> projectMap;
+	private Workstation workstation;
 
 	public Developer()
 	{
@@ -77,6 +78,16 @@ public class Developer
 	public Map<String, Project> getProjectMap()
 	{
 		return projectMap;
+	}
+
+	public Workstation getWorkstation()
+	{
+		return workstation;
+	}
+
+	public void setWorkstation(Workstation workstation)
+	{
+		this.workstation = workstation;
 	}
 
 	public void setProjectMap(Map<String, Project> projectMap)

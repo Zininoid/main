@@ -20,6 +20,7 @@
 			<one-to-many class = "com.zininoid.hibernate.entities.Project"/>
 		</map>
 
+		<one-to-one name="workstation" cascade="all" class="com.zininoid.hibernate.entities.Workstation"/>
 	</class>
 
 </hibernate-mapping>

@@ -3,11 +3,15 @@
 		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
 		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.zininoid.hibernate.entities.User" table="aduser" lazy="true">
+	<class name="com.zininoid.hibernate.entities.User" table="T_USER" lazy="true">
 		<id name="id" type="long" column="id">
 			<generator class="native"/>
 		</id>
-		<property name="name" column="name" type="string" unique="true"/>
-		<property name="password" column="password" type="string"/>
+		<property name="name" column="USER_NAME" type="string" unique="true"/>
+		<property name="password" column="USER_PASSWORD" type="string"/>
+
+		<many-to-one name="address" class="com.zininoid.hibernate.entities.Address">
+			<column name="USER_ADDRESS" />
+		</many-to-one>
 	</class>
 </hibernate-mapping>

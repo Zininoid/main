@@ -2,6 +2,7 @@ package com.zininoid.hibernate.entities;
 
 public class Address
 {
+	private long id;
 	private String street;
 	private String city;
 	private String state;
@@ -57,6 +58,16 @@ public class Address
 	public void setZipcode(String zipcode)
 	{
 		this.zipcode = zipcode;
+	}
+
+	public long getId()
+	{
+		return id;
+	}
+
+	public void setId(long id)
+	{
+		this.id = id;
 	}
 
 	@Override

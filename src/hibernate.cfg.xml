@@ -6,18 +6,28 @@
 	<session-factory>
 
 
+		<mapping resource="com/zininoid/hibernate/resources/entities/HibernateDeveloper.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/HibernateProject.hbm.xml"/>
+
+		<!--
+
+		<property name="hbm2ddl.auto">create</property>
+
+		<mapping resource="com/zininoid/hibernate/resources/entities/Workstation.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/Developer.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/Project.hbm.xml"/>
+
 
 		<mapping resource="com/zininoid/hibernate/resources/entities/Books.hbm.xml"/>
 		<mapping resource="com/zininoid/hibernate/resources/entities/Authors.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/User.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/Address.hbm.xml"/>
+
 		<mapping resource="com/zininoid/hibernate/resources/entities/Employee.hbm.xml"/>
 		<mapping resource="com/zininoid/hibernate/resources/entities/Phones.hbm.xml"/>
 
 		<mapping resource="com/zininoid/hibernate/resources/entities/Developer.hbm.xml"/>
 		<mapping resource="com/zininoid/hibernate/resources/entities/Project.hbm.xml"/>
-		<!--
-
-		<property name="hbm2ddl.auto">create</property>
-
 			<mapping resource="com/zininoid/hibernate/resources/entities/Advert.hbm.xml"/>
 				<mapping resource="com/zininoid/hibernate/resources/entities/Category.hbm.xml"/>
 				<mapping resource="com/zininoid/hibernate/resources/entities/Phone.hbm.xml"/>

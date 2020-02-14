@@ -1,16 +1,19 @@
 package com.zininoid.hibernate.entities;
 
 
+@SuppressWarnings("JpaAttributeTypeInspection")
 public class User
 {
 	private long id;
 	private String name;
 	private String password;
+	private Address address;
 
-	public User(String name, String password)
+	public User(String name, String password, Address address)
 	{
 		this.name = name;
 		this.password = password;
+		this.address = address;
 	}
 
 	public User()
@@ -45,5 +48,15 @@ public class User
 	public void setPassword(String password)
 	{
 		this.password = password;
+	}
+
+	public Address getAddress()
+	{
+		return address;
+	}
+
+	public void setAddress(Address address)
+	{
+		this.address = address;
 	}
 }

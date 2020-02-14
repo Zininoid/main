@@ -11,12 +11,18 @@ import org.hibernate.Transaction;
 import java.util.*;
 
 import static com.zininoid.hibernate.DeveloperMap.testDeveloperMap;
+import static com.zininoid.hibernate.HibernateDevelopersManyToMany.testManyToMany;
 
 public class Main {
 
     public static void main(String[] args) {
 
-	    testDeveloperMap();
+//	    UserManyToOne.testUserManyToOne();
+	//    saveAuthor(getAuthor());
+	//    testAgentManyToOne();
+	    testManyToMany();
+//	    testDeveloperMap();
+
     //  Author author = getAuthor();
     //  saveAuthor(author);
 	//  Author author = findAuthor("Джоан Роулинг");

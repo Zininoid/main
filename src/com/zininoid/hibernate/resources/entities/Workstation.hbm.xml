@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping
+		PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zininoid.hibernate.entities.Workstation" table="WORKSTATION">
+
+		<id name="id" type="long">
+			<column name="ID" />
+			<generator class="foreign">
+				<param name="property">developer</param>
+			</generator>
+		</id>
+
+		<property name="cpu" column="CPU" type="string"/>
+		<property name="os" column="OS" type="string"/>
+		<property name="ram" column="RAM" type="int"/>
+		<property name="hdd" column="HDD" type="int"/>
+
+		<one-to-one name="developer" cascade="all" constrained="true" class="com.zininoid.hibernate.entities.Developer"/>
+
+	</class>
+
+</hibernate-mapping>
