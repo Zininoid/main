@@ -5,9 +5,12 @@
 <hibernate-configuration>
 	<session-factory>
 
+		<mapping resource="com/zininoid/hibernate/resources/entities/Books.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/Authors.hbm.xml"/>
 
 		<mapping resource="com/zininoid/hibernate/resources/entities/HibernateDeveloper.hbm.xml"/>
 		<mapping resource="com/zininoid/hibernate/resources/entities/HibernateProject.hbm.xml"/>
+
 
 		<!--
 
@@ -18,8 +21,7 @@
 		<mapping resource="com/zininoid/hibernate/resources/entities/Project.hbm.xml"/>
 
 
-		<mapping resource="com/zininoid/hibernate/resources/entities/Books.hbm.xml"/>
-		<mapping resource="com/zininoid/hibernate/resources/entities/Authors.hbm.xml"/>
+
 		<mapping resource="com/zininoid/hibernate/resources/entities/User.hbm.xml"/>
 		<mapping resource="com/zininoid/hibernate/resources/entities/Address.hbm.xml"/>
 

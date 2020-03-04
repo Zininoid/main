@@ -56,4 +56,15 @@ public class Books
 	{
 		this.id = id;
 	}
+
+	@Override
+	public String toString()
+	{
+		final StringBuffer sb = new StringBuffer("Books{");
+		sb.append("authorId=").append(authorId);
+		sb.append(", bookName='").append(bookName).append('\'');
+		sb.append(", price=").append(price);
+		sb.append('}');
+		return sb.toString();
+	}
 }
