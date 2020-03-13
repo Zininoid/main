@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="entities.Group" table="C_GROUP">
+
+        <id name="id" type="long" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="groupName" column="GROUP_NAME" type="string" not-null="true"/>
+        <property name="description" column="DESCRIPTION" type="string" not-null="true"/>
+
+        <set name="employees" table="C_EMPLOYEE" cascade="all">
+            <key column="group_id"/>
+            <one-to-many class="entities.Employee" />
+        </set>
+
+    </class>
+</hibernate-mapping>
+
+

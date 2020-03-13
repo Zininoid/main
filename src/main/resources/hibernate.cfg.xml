@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+
+
+		<property name="hbm2ddl.auto">create</property>
+
+		<mapping resource="Group.hbm.xml"/>
+		<mapping resource="Department.hbm.xml"/>
+		<mapping resource="Employee.hbm.xml"/>
+		<mapping resource="Project.hbm.xml"/>
+
+
+
+
+		<!--
+
+
+		<mapping resource="Group.hbm.xml"/>
+		<mapping resource="Department.hbm.xml"/>
+
+		<property name="hbm2ddl.auto">create</property>
+
+		<mapping resource="Group.hbm.xml"/>
+		<mapping resource="Department.hbm.xml"/>
+
+		<mapping resource="com/zininoid/hibernate/resources/entities/Workstation.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/Developer.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/Project.hbm.xml"/>
+
+
+
+		<mapping resource="com/zininoid/hibernate/resources/entities/User.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/Address.hbm.xml"/>
+
+		<mapping resource="com/zininoid/hibernate/resources/entities/Employee.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/Phones.hbm.xml"/>
+
+		<mapping resource="com/zininoid/hibernate/resources/entities/Developer.hbm.xml"/>
+		<mapping resource="com/zininoid/hibernate/resources/entities/Project.hbm.xml"/>
+			<mapping resource="com/zininoid/hibernate/resources/entities/Advert.hbm.xml"/>
+				<mapping resource="com/zininoid/hibernate/resources/entities/Category.hbm.xml"/>
+				<mapping resource="com/zininoid/hibernate/resources/entities/Phone.hbm.xml"/>
+				<mapping resource="com/zininoid/hibernate/resources/entities/User.hbm.xml"/>
+		-->
+	</session-factory>
+
+
+</hibernate-configuration>
