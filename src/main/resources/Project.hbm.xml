@@ -10,8 +10,8 @@
         </id>
 
         <property name="projectName" column="PROJECT_NAME" type="string"/>
-        <property name="from" column="FROM" type="java.util.Calendar"/>
-        <property name="to" column="TO" type="java.util.Calendar"/>
+        <property name="from" column="DATE_FROM" type="java.util.Calendar"/>
+        <property name="to" column="DATE_TO" type="java.util.Calendar"/>
 
     </class>
 </hibernate-mapping>

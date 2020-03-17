@@ -1,12 +1,13 @@
 package entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Group {
     long id;
     String groupName;
     String description;
-    Set<Employee> employees;
+    Set<Employee> employees = new HashSet<Employee>();
 
     public Group() {
     }

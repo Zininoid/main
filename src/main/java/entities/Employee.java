@@ -2,24 +2,19 @@ package entities;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Employee {
     long id;
     String employeeName;
 //    Role role;
 //    Speciality speciality;
-    HashSet<Project> projects;
+    Set<Project> projects = new HashSet<Project>();
 //    Computer computer;
     int salary;
 //    List<Hardware> hardwareList;
 
     public Employee() {
-    }
-
-    public Employee(String employeeName, int salary, HashSet<Project> projects) {
-        this.employeeName = employeeName;
-        this.salary = salary;
-        this.projects = projects;
     }
 
     public long getId() {
@@ -46,11 +41,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public HashSet<Project> getProjects() {
+    public Set<Project> getProjects() {
         return projects;
     }
 
-    public void setProjects(HashSet<Project> projects) {
+    public void setProjects(Set<Project> projects) {
         this.projects = projects;
     }
 }

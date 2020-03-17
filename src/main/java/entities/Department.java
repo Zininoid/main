@@ -1,11 +1,12 @@
 package entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Department {
     long id;
     String departmentName;
-    Set<Group> groupSet;
+    Set<Group> groupSet = new HashSet<Group>();
 
     public Department(long id, String departmentName, Set<Group> groupSet) {
         this.id = id;

@@ -9,12 +9,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Department department = new Department();
-        department.setDepartmentName("Frontend Development");
 
-        Group jsDev = new Group("JS-Development", "Java script development");
-        Group angularDev = new Group("HTML-Development", "HTML development");
-        Group reactDev = new Group("React-Development", "React development");
 
         final Project google =    new Project("Google.com",   new GregorianCalendar(1990, Calendar.JANUARY, 10), new GregorianCalendar(2000, Calendar.MARCH,1));
         final Project amazon =    new Project("Amazon.com",   new GregorianCalendar(1995, Calendar.FEBRUARY, 1), new GregorianCalendar(2006, Calendar.MAY,1));
@@ -22,56 +17,59 @@ public class Main {
         final Project facebook =  new Project("Facebook.com", new GregorianCalendar(1999, Calendar.JULY, 1), new GregorianCalendar(2007, Calendar.DECEMBER,1));
         final Project apple =     new Project("Apple.com",   new GregorianCalendar(2000, Calendar.OCTOBER, 1), new GregorianCalendar(2010, Calendar.MAY,1));
 
-        Employee georgeWashington = new Employee("George Washington", 10000, new HashSet<Project>(){{add(google);add(ebay);}});
+        Employee georgeWashington     = new EmployeeBuilder().setEmployeeName("George Washington").setSalary(25000).addProject(google).addProject(ebay).addProject(apple).build();
+        Employee johnAdams            = new EmployeeBuilder().setEmployeeName("John Adams").setSalary(10000).addProject(amazon).addProject(facebook).build();
+        Employee thomasJefferson      = new EmployeeBuilder().setEmployeeName("Thomas Jefferson").setSalary(15000).addProject(google).addProject(apple).addProject(facebook).build();
+        Employee jamesMadison         = new EmployeeBuilder().setEmployeeName("James Madison").setSalary(15000).addProject(amazon).addProject(facebook).build();
+        Employee jamesMonroe          = new EmployeeBuilder().setEmployeeName("James Monroe").setSalary(10000).addProject(ebay).build();
+        Employee johnQuincyAdams      = new EmployeeBuilder().setEmployeeName("John Quincy Adams").setSalary(10000).addProject(amazon).addProject(google).build();
+        Employee andrewJackson        = new EmployeeBuilder().setEmployeeName("Andrew Jackson").setSalary(15000).addProject(apple).addProject(facebook).build();
+        Employee martinVanBuren       = new EmployeeBuilder().setEmployeeName("Martin Van Buren").setSalary(10000).addProject(ebay).addProject(amazon).build();
+        Employee williamHenryHarrison = new EmployeeBuilder().setEmployeeName("William Henry Harrison").setSalary(20000).addProject(amazon).addProject(facebook).build();
+        Employee johnTyler            = new EmployeeBuilder().setEmployeeName("John Tyler").setSalary(10000).addProject(ebay).build();
+        Employee jamesKPolk           = new EmployeeBuilder().setEmployeeName("James K. Polk").setSalary(15000).addProject(google).addProject(ebay).addProject(apple).addProject(facebook).build();
+        Employee zacharyTaylor        = new EmployeeBuilder().setEmployeeName("Zachary Taylor").setSalary(20000).addProject(google).addProject(amazon).build();
+        Employee millardFillmore      = new EmployeeBuilder().setEmployeeName("Millard Fillmore").setSalary(15000).addProject(facebook).addProject(apple).build();
 
-        Employee johnAdams = new Employee("John Adams", 10000,  new HashSet<Project>(){{add(amazon);add(facebook);}});
-        Employee thomasJefferson = new Employee("Thomas Jefferson", 15000,  new HashSet<Project>(){{add(google);add(apple);add(facebook);}});
-        Employee jamesMadison = new Employee("James Madison", 15000,  new HashSet<Project>(){{add(amazon);add(facebook);}});
-        Employee jamesMonroe = new Employee("James Monroe", 10000,  new HashSet<Project>(){{add(ebay);}});
-        Employee johnQuincyAdams = new Employee("John Quincy Adams", 10000, new HashSet<Project>(){{add(amazon);add(google);}});
-        Employee andrewJackson = new Employee("Andrew Jackson", 15000,  new HashSet<Project>(){{add(apple);add(facebook);}});
-        Employee martinVanBuren = new Employee("Martin Van Buren", 10000,  new HashSet<Project>(){{add(ebay);add(amazon);}});
-        Employee williamHenryHarrison = new Employee("William Henry Harrison", 20000,  new HashSet<Project>(){{add(amazon);add(facebook);}});
-        Employee johnTyler = new Employee("John Tyler", 10000,  new HashSet<Project>(){{add(ebay);}});
-        Employee jamesKPolk = new Employee("James K. Polk", 15000,  new HashSet<Project>(){{add(google);add(ebay);add(apple);add(facebook);}});
-        Employee zacharyTaylor = new Employee("Zachary Taylor", 20000,   new HashSet<Project>(){{add(google);add(amazon);}});
-        Employee millardFillmore = new Employee("Millard Fillmore", 15000,   new HashSet<Project>(){{add(facebook);add(apple);}});
+        Group jsDev = new GroupBuilder().setGroupName("JS-Development").setGroupDescription("Java script development")
+                                                                        .addEmployee(georgeWashington)
+                                                                        .addEmployee(johnAdams)
+                                                                        .addEmployee(millardFillmore)
+                                                                        .addEmployee(thomasJefferson)
+                                                                        .addEmployee(zacharyTaylor)
+                                                                        .build();
+        Group htmlDev = new GroupBuilder().setGroupName("HTML-Development").setGroupDescription("HTML development")
+                                                                        .addEmployee(jamesMadison)
+                                                                        .addEmployee(jamesMonroe)
+                                                                        .addEmployee(jamesMonroe)
+                                                                        .addEmployee(johnQuincyAdams)
+                                                                        .build();
+        Group reactDev = new GroupBuilder().setGroupName("React-Development").setGroupDescription("React development")
+                                                                        .addEmployee(andrewJackson)
+                                                                        .addEmployee(martinVanBuren)
+                                                                        .addEmployee(williamHenryHarrison)
+                                                                        .addEmployee(johnTyler)
+                                                                        .addEmployee(jamesKPolk)
+                                                                        .build();
 
+        Department department = new Department();
+        department.setDepartmentName("Frontend Development");
 
-        Set<Employee> jsDevs = new HashSet<Employee>();
-        jsDevs.add(georgeWashington);
-        jsDevs.add(johnAdams);
-        jsDevs.add(thomasJefferson);
-        jsDevs.add(jamesMonroe);
+        department.getGroupSet().add(jsDev);
+        department.getGroupSet().add(htmlDev);
+        department.getGroupSet().add(reactDev);
 
-        Set<Employee> angularDevs = new HashSet<Employee>();
-        angularDevs.add(jamesMadison);
-        angularDevs.add(johnQuincyAdams);
-        angularDevs.add(andrewJackson);
-        angularDevs.add(martinVanBuren);
-        angularDevs.add(williamHenryHarrison);
+        try {
+            saveDepartment(department);
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
 
-        Set<Employee> reactDevs = new HashSet<Employee>();
-        reactDevs.add(johnTyler);
-        reactDevs.add(jamesKPolk);
-        reactDevs.add(zacharyTaylor);
-        reactDevs.add(millardFillmore);
-
-        jsDev.setEmployees(jsDevs);
-        angularDev.setEmployees(angularDevs);
-        reactDev.setEmployees(reactDevs);
-
-        Set<Group> groups = new HashSet<Group>();
-        groups.add(jsDev);
-        groups.add(angularDev);
-        groups.add(reactDev);
-
-        department.setGroupSet(groups);
-
-        saveDepartment(department);
     }
 
- public static void saveDepartment(Department department)
+ public static void saveDepartment(Department department) throws Exception
         {
         Transaction tx = null;
         try {

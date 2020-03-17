@@ -7,6 +7,7 @@ public class Project {
     String projectName;
     Calendar from;
     Calendar to;
+    //long employeeId;
 
     public Project() {
     }
@@ -48,4 +49,12 @@ public class Project {
     public void setTo(Calendar to) {
         this.to = to;
     }
+
+/*    public long getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
+    }*/
 }
