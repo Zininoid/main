@@ -13,6 +13,9 @@
 		<mapping resource="Department.hbm.xml"/>
 		<mapping resource="Employee.hbm.xml"/>
 		<mapping resource="Project.hbm.xml"/>
+		<mapping resource="Role.hbm.xml"/>
+		<mapping resource="Speciality.hbm.xml"/>
+		<mapping resource="Hardware.hbm.xml"/>
 
 
 

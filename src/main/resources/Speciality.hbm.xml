@@ -5,11 +5,11 @@
 <hibernate-mapping>
     <class name="entities.Speciality" table="C_SPECIALITY">
 
-        <id name="id" type="int" column="id">
+        <id name="id" type="long" column="id">
             <generator class="native"/>
         </id>
 
-        <property name="name" column="NAME" type="string"/>
+        <property name="specialityName" column="SPECIALITY_NAME" type="string"/>
 
     </class>
 </hibernate-mapping>

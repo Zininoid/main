@@ -3,13 +3,19 @@
         PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+
+    <typedef name="mainRole" class="org.hibernate.type.EnumType">
+        <param name="enumClass">entities.MainRoles</param>
+    </typedef>
+
     <class name="entities.Role" table="C_ROLE">
 
-        <id name="id" type="int" column="id">
+        <id name="id" type="long" column="id">
             <generator class="native"/>
         </id>
 
-        <property name="name" column="NAME" type="string"/>
+        <property name="roleName" column="ROLE_NAME" type="mainRole"/>
+        <property name="roleDescription" column="ROLE_DESCRIPTION" type="string"/>
 
     </class>
 </hibernate-mapping>

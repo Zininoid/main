@@ -1,29 +1,39 @@
 package entities;
 
 public class Role {
-    int id;
-    String name;
+    long id;
+    MainRoles roleName;
+    String roleDescription;
 
     public Role() {
     }
 
-    public Role(String name) {
-        this.name = name;
+    public Role(MainRoles roleName, String roleDescription) {
+        this.roleName = roleName;
+        this.roleDescription = roleDescription;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public MainRoles getRoleName() {
+        return roleName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRoleName(MainRoles roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleDescription() {
+        return roleDescription;
+    }
+
+    public void setRoleDescription(String roleDescription) {
+        this.roleDescription = roleDescription;
     }
 }

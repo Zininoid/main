@@ -1,29 +1,29 @@
 package entities;
 
 public class Speciality {
-    int id;
-    String name;
+    long id;
+    String specialityName;
 
     public Speciality() {
     }
 
-    public Speciality(String name) {
-        this.name = name;
+    public Speciality(String specialityName) {
+        this.specialityName = specialityName;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getSpecialityName() {
+        return specialityName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSpecialityName(String specialityName) {
+        this.specialityName = specialityName;
     }
 }

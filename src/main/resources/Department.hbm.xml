@@ -13,8 +13,12 @@
 
         <property name="departmentName" column="DEPARTMENT_NAME" type="string"/>
 
+        <!-- В классе сущности тип переменной указать интерфейс Set<groupSet> projects = new HashSet<groupSet>();
+        Если указать конкретный класс, реализующий интерфейс, будет ошибка
+         <key column="DEPARTMENT_ID"/> - колонка в таблице C_GROUP, в которой будет храниться ID C_DEPARTMENT
+        -->
         <set name="groupSet" table="C_GROUP" cascade="all">
-            <key column="department_id"/>
+            <key column="DEPARTMENT_ID"/>
             <one-to-many class="entities.Group" />
         </set>
 

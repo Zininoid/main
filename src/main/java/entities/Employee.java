@@ -1,17 +1,16 @@
 package entities;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Employee {
     long id;
     String employeeName;
-//    Role role;
-//    Speciality speciality;
+    Role role;
+    Speciality speciality;
     Set<Project> projects = new HashSet<Project>();
-//    Computer computer;
     int salary;
+//    Computer computer;
+    Map<HardwareType, Hardware> hardwareMap = new HashMap<HardwareType, Hardware>();
 //    List<Hardware> hardwareList;
 
     public Employee() {
@@ -47,5 +46,29 @@ public class Employee {
 
     public void setProjects(Set<Project> projects) {
         this.projects = projects;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public Speciality getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(Speciality speciality) {
+        this.speciality = speciality;
+    }
+
+    public Map<HardwareType, Hardware> getHardwareMap() {
+        return hardwareMap;
+    }
+
+    public void setHardwareMap(Map<HardwareType, Hardware> hardwareMap) {
+        this.hardwareMap = hardwareMap;
     }
 }

@@ -2,14 +2,18 @@
 <!DOCTYPE hibernate-mapping
         PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping>
+
     <class name="entities.Hardware" table="C_HARDWARE">
 
-        <id name="id" type="int" column="id">
+        <id name="id" type="long" column="id">
             <generator class="native"/>
         </id>
 
-        <property name="name" column="NAME" type="string"/>
+        <property name="hardwareName" column="HARDWARE_NAME" type="string"/>
+        <property name="hardwareInterface" column="HARDWARE_INTERFACE" type="string"/>
+        <property name="hardWareSerialNumber" column="HARDWARE_SERIAL_NUMBER" type="string"/>
 
     </class>
 </hibernate-mapping>

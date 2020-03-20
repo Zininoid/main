@@ -4,6 +4,11 @@
         "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
+
+    <typedef name="hardwareEnumType" class="org.hibernate.type.EnumType">
+        <param name="enumClass">entities.HardwareType</param>
+    </typedef>
+
     <class name="entities.Employee" table="C_EMPLOYEE">
 
         <id name="id" type="long" column="id">
@@ -13,10 +18,35 @@
         <property name="employeeName" column="EMPLOYEE_NAME" type="string" not-null="true"/>
         <property name="salary" column="SALARY" type="int" not-null="true"/>
 
+        <!-- Этат тип связи проще всего, просто указываем необходимый класс, не забываем указывать cascade="all" -->
+        <many-to-one name = "role" column = "ROLE"
+                     cascade="all" class="entities.Role"/>
+
+        <many-to-one name = "speciality" column = "SPECIALITY"
+                     cascade="all" class="entities.Speciality"/>
+
+
+        <!--  В классе сущности тип переменной указать интерфейс Set<Project> projects = new HashSet<Project>();
+            table="C_DEV_PROJECTS" - это линковочная таблица
+            key column="EMPLOYEE_ID" - это колонка в линковочной таблице, хранящая id Employee
+            many-to-many column="PROJECT_ID" class="entities.Project" - PROJECT_ID это колонка в линковочной таблице, хранящая id Project
+        -->
         <set name="projects" cascade="all" table="C_DEV_PROJECTS">
             <key column="EMPLOYEE_ID" />
             <many-to-many column="PROJECT_ID" class="entities.Project"/>
         </set>
+
+        <!--   В классе сущности тип переменной указать интерфейс,  Map<HardwareType, Hardware> hardwareMap = new HashMap<HardwareType, Hardware>(),
+                НЕ HashMap<HardwareType, Hardware> hardwareMap, иначе будет ошибка
+                key column="EMPLOYEE_ID" - сюда Hibernate запишет ID объекта Employee, название может быть любое.
+               index column="HARDWARE_ITEM" - это ключ из MAP, тип должен дыть соответтсвующий,
+               в данном  случае Map<HardwareType, Hardware>, тип HardwareType выше определен как hardwareEnumType -->
+        <map name="hardwareMap" cascade="all">
+            <key column = "EMPLOYEE_ID"/>
+            <index column="HARDWARE_ITEM" type = "hardwareEnumType"/>
+            <one-to-many class = "entities.Hardware"/>
+        </map>
+
 
     </class>
 </hibernate-mapping>
