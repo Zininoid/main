@@ -15,7 +15,6 @@
 
 		<many-to-one name = "address" column = "address"
 		             class="com.zininoid.hibernate.entities.AgentAddress" not-null="true"/>
-
 	</class>
 
 </hibernate-mapping>

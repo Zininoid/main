@@ -2,19 +2,27 @@
 <!DOCTYPE hibernate-configuration PUBLIC
 		"-//Hibernate/Hibernate Configuration DTD//EN"
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
 <hibernate-configuration>
 	<session-factory>
 
+		<property name="connection.url">jdbc:oracle:thin:@10.53.66.96:1521:esadev</property>
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.username">ZSA_TEST_DB</property>
+		<property name="connection.password">123</property>
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+		<property name="hbm2ddl.auto">create</property>
 		<mapping resource="com/zininoid/hibernate/resources/entities/Books.hbm.xml"/>
 		<mapping resource="com/zininoid/hibernate/resources/entities/Authors.hbm.xml"/>
 
+
+
+		<!--
 		<mapping resource="com/zininoid/hibernate/resources/entities/HibernateDeveloper.hbm.xml"/>
 		<mapping resource="com/zininoid/hibernate/resources/entities/HibernateProject.hbm.xml"/>
 
 
-		<!--
-
-		<property name="hbm2ddl.auto">create</property>
 
 		<mapping resource="com/zininoid/hibernate/resources/entities/Workstation.hbm.xml"/>
 		<mapping resource="com/zininoid/hibernate/resources/entities/Developer.hbm.xml"/>
